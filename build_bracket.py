@@ -2,14 +2,6 @@ from bracketeer import build_bracket
 import os
 from os.path import expanduser
 
-b = build_bracket(
-        outputPath='output.png',
-        teamsPath='data/Teams.csv',
-        seedsPath='data/TourneySeeds.csv',
-        submissionPath='data/submit.csv',
-        slotsPath='data/TourneySlots.csv',
-        year=2017
-)
 
 # Running Below assumes that repo is stored on Macbook Desktop directory.
 home = expanduser("~") # root on my machine
@@ -34,3 +26,12 @@ STACKED_model_bracket = build_bracket(outputPath=img_dir+'stacked_model_bracket.
                                       slotsPath=src_dir+'NCAATourneySlots.csv',
                                       year=2019)
 
+
+
+# Sean Boren's Bracket Based upon the Stacked Model predictions (Penalized Logistic + RF base learners)
+sboren_model_bracket = build_bracket(outputPath=img_dir+'SBoren_model_bracket.png',
+                                     teamsPath=src_dir+'Teams.csv',
+                                     seedsPath=src_dir+'NCAATourneySeeds.csv',
+                                     submissionPath=src_dir+'sboren_true_model_submission.csv',
+                                     slotsPath=src_dir+'NCAATourneySlots.csv',
+                                     year=2019)
